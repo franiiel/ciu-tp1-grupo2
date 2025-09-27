@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 function Navegacion() {
   return (
     <>
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar className="mi-navbar" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">Luna & Granos Café</Navbar.Brand>
           <Nav className="me-auto">
