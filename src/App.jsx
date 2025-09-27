@@ -1,14 +1,22 @@
+import { Navigate, Route, Routes } from "react-router-dom"
 import Navegacion from "./components/Navegacion"
-import Carta from "./pages/Carta"
 import Inicio from "./pages/inicio"
+import Carta from "./pages/Carta"
+import Carrito from "./pages/Carrito"
+import Contacto from "./pages/Contacto"
+
 
 function App() {
 
   return (
     <>
       <Navegacion></Navegacion>
-      <Inicio></Inicio>
-      <Carta></Carta>
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/carta" element={<Carta />} />
+        <Route path="/carrito" element={<Carrito />} />
+        <Route path="/contacto" element={<Contacto />} />
+      </Routes>
     </>
   )
 }

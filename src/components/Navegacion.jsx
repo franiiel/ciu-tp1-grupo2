@@ -1,3 +1,4 @@
+import { Link, NavLink } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,12 +8,12 @@ function Navegacion() {
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">Luna & Granos Café</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">Luna & Granos Café</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#home">Carta</Nav.Link>
-            <Nav.Link href="#features">Carrito</Nav.Link>
-            <Nav.Link href="#pricing">Contacto</Nav.Link>
+            <Nav.Link as={NavLink} to="/">Inicio</Nav.Link>
+            <Nav.Link as={NavLink} to="/carta">Carta</Nav.Link>
+            <Nav.Link as={NavLink} to="/carrito">Carrito</Nav.Link>
+            <Nav.Link as={NavLink} to="/contacto">Contacto</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
