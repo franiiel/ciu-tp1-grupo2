@@ -8,7 +8,9 @@ function Navegacion() {
     <>
       <Navbar className="mi-navbar" expand="lg">
         <Container>
-          <Navbar.Brand as={Link} to="/">Luna & Granos Café</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            Luna & Granos Café
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

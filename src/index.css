@@ -1,3 +1,4 @@
+/*
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -30,7 +31,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-*/
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -69,6 +70,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/
+
 /* navegacion */
 
 .mi-navbar {
@@ -88,7 +91,6 @@ button:focus-visible {
   margin-right: 1rem;
   transition: color 0.3s ease;
 }
-
 
 /* inicio*/
 
@@ -238,4 +240,30 @@ button:focus-visible {
 .boton-car:hover {
   background-color: #5d3b2b; /* cambia de color*/
   transform: translateY(-2px);  /*Levanta el boton*/
+}
+
+
+/* Footer */
+
+
+.footer {
+  background-color: #3b2418; /* marrón oscuro */
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.footer-icon {
+  font-size: 1.4rem;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.footer-icon:hover {
+  color: #f4d19c; /* tono crema para hover */
 }
