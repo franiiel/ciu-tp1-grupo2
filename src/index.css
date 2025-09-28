@@ -78,7 +78,7 @@ button:focus-visible {
 }
 
 .mi-navbar .navbar-brand {
-  color: #fbe9e7; /* Beige claro */
+  color: #fbe9e7; 
   font-weight: bold;
   font-size: 1.5rem;
 }
@@ -93,7 +93,7 @@ button:focus-visible {
 /* inicio*/
 
 .home-page {
-  background-color: #fbf7f3; /* tono crema suave */
+  background-color: #fbf7f3;
   min-height: 100vh;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -119,7 +119,7 @@ button:focus-visible {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 1.4rem;
   line-height: 1.5;
-  color: #2d1f18; /* marrón oscuro */
+  color: #2d1f18; 
   margin: 10px 0 22px;
   text-align: center;
   font-weight: 500;
@@ -187,4 +187,55 @@ button:focus-visible {
     padding: 12px 28px;
     font-size: 0.98rem;
   }
+}
+
+/* Tarjeta de producto*/
+
+.product-car {
+  border: none;
+  border-radius: 12px;
+  background-color: #fffdf9; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-car:hover {
+  transform: translateY(-4px);  /* Levanta la tarjeta*/
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* La da sombra a la tarjeta */
+}
+
+
+.product-image {
+  height: 300px;
+  object-fit: cover;  /* Hace que la imagen llene completamente el contenedor.*/
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+
+.producto-titulo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #3b2418; 
+  margin-bottom: 0.4rem;
+}
+
+
+.producto-precio {
+  font-size: 0.95rem;
+  color: #6d4c41; 
+  margin-bottom: 1rem;
+}
+
+
+.boton-car {
+  background-color: #3b2418; 
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.boton-car:hover {
+  background-color: #5d3b2b; /* cambia de color*/
+  transform: translateY(-2px);  /*Levanta el boton*/
 }

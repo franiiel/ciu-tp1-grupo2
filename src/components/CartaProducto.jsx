@@ -1,18 +1,27 @@
+import React from "react";
 import { Card, Button } from "react-bootstrap";
 
 function CartaProducto({producto, aniadirAlCarrito}) {
     return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img 
-      variant={producto.nombre} 
-      src={producto.imagen} 
-      style= {{ height: "200px", objectFit: "cover" }}/>
-      <Card.Body>
-        <Card.Title>{producto.nombre}</Card.Title>
-        <Card.Text>
-          Precio: ${producto.precio}</Card.Text>
+    <Card className="product-car h-100 shadow-sm">
 
-        <Button variant="primary" onClick={() => aniadirAlCarrito(producto)}>Agregar Producto</Button>
+      <Card.Img 
+        variant= "top"  // Ubicacion de la imagen dentro de la tarjeta
+        src={producto.imagen} 
+        alt={producto.nombre}   // Describe la imagen
+        className="product-image" 
+      />
+
+      <Card.Body className="d-flex flex-column">
+
+        <Card.Title className="producto-titulo">{producto.nombre}</Card.Title>
+
+        <Card.Text className="producto-precio">Precio: ${producto.precio}</Card.Text>
+
+        <Button variant="primary" size="sm" className="boton-car" onClick={() => aniadirAlCarrito(producto)}>
+          Agregar Producto  
+        </Button>
+
       </Card.Body>
     </Card>
   );             
