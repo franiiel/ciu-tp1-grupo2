@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import Navegacion from "./components/Navegacion"
+import Header from "./components/Header"
 import Inicio from "./pages/inicio"
 import Carta from "./pages/Carta"
 import Carrito from "./pages/Carrito"
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Navegacion></Navegacion>
+      <Header></Header>
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/carta" element={<Carta />} />
