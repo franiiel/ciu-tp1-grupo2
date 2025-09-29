@@ -1,7 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import ListaProducto from '../components/ListaProducto'
-import {Container} from "react-bootstrap";
+import {Container, Button, ButtonGroup} from "react-bootstrap";
 
 /*imagenes de la carta*/
 
@@ -16,24 +16,57 @@ import cappuccino from "../assets/cappuccino.png"
 
 
 function Carta() {
+  const [categoriaFiltro, setCategoriaFiltro]= useState("todos");
+
   const productos = [
-    { id: 1, nombre: "Café Espresso", precio: 500, imagen: expresso },
-    { id: 2, nombre: "Café Latte", precio: 700, imagen: latte },
-    { id: 3, nombre: "Café Cappuccino", precio: 750, imagen: cappuccino },
-    { id: 4, nombre: "Té Verde", precio: 400, imagen: teVerde },
-    { id: 5, nombre: "Medialuna", precio: 300, imagen: medialuna },
-    { id: 6, nombre: "Tostado Jamón y Queso", precio: 1200, imagen: sanjyq },
-    { id: 7, nombre: "Brownie", precio: 600, imagen: brownie },
-    { id: 8, nombre: "Cheesecake", precio: 850, imagen: cheesecake},
+    { id: 1, nombre: "Café Espresso", precio: 500, categoria: "bebidas", imagen: expresso },
+    { id: 2, nombre: "Café Latte", precio: 700, categoria: "bebidas", imagen: latte },
+    { id: 3, nombre: "Café Cappuccino", precio: 750, categoria: "bebidas", imagen: cappuccino },
+    { id: 4, nombre: "Té Verde", precio: 400, categoria: "bebidas", imagen: teVerde },
+    { id: 5, nombre: "Medialuna", precio: 300, categoria: "pastelería", imagen: medialuna },
+    { id: 6, nombre: "Tostado Jamón y Queso", precio: 1200, categoria: "pastelería", imagen: sanjyq },
+    { id: 7, nombre: "Brownie", precio: 600, categoria: "pastelería", imagen: brownie },
+    { id: 8, nombre: "Cheesecake", precio: 850, categoria: "pastelería", imagen: cheesecake},
   ];
+
+  const productosFiltrados=productos.filter(
+    (prod)=> categoriaFiltro === "todos" || prod.categoria === categoriaFiltro
+  );
    
 
   return (
     <Container className="mt-4">
       <h2 className="mb-4">Carta del Café</h2>
 
-      <ListaProducto productos={productos} aniadirAlCarrito={console.log(
-        "Falta el implementar el carrito")} />
+      {/*botones filtro*/}
+      <ButtonGroup className="mb-3">
+        <Button
+          variant={categoriaFiltro === "todos" ? "primary" : "secondary"}
+          onClick={() => setCategoriaFiltro("todos")}
+        >
+          Todos
+        </Button>
+        <Button
+          variant={categoriaFiltro === "bebidas" ? "primary" : "secondary"}
+          onClick={() => setCategoriaFiltro("bebidas")}
+        >
+          Bebidas
+        </Button>
+        <Button
+          variant={categoriaFiltro === "pastelería" ? "primary" : "secondary"}
+          onClick={() => setCategoriaFiltro("pastelería")}
+        >
+          Pastelería
+        </Button>
+      </ButtonGroup>
+
+      {/* Lista de productos filtrados */}
+      <ListaProducto 
+        productos={productosFiltrados} 
+        aniadirAlCarrito={(prod) => console.log("Agregar al carrito:", prod)}
+      />
+      {/* <ListaProducto productos={productos} aniadirAlCarrito={console.log(
+        "Falta el implementar el carrito")} /> */}
     </Container>
   );
 }
