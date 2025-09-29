@@ -25,6 +25,7 @@ a:hover {
 /* 
 body {
   margin: 0;
+  background-color: #FAF9F6;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -72,28 +73,71 @@ button:focus-visible {
 /* navegacion */
 
 .mi-navbar {
-  background-color: #4e342e;
-  font-family: 'Quicksand', sans-serif; 
+  background-color: #C5A572;
+  font-family: 'Montserrat', sans-serif; 
   padding: 0.5rem 1rem;
 }
 
+.navbar-logo {
+  height: 30px;
+  object-fit: contain;
+}
+
+
 .mi-navbar .navbar-brand {
-  color: #fbe9e7; 
+  color: #4F2B1D; 
   font-weight: bold;
   font-size: 1.5rem;
 }
 
 .mi-navbar .nav-link {
-  color: #fbe9e7;
+  color: #FAF9F6;
   margin-right: 1rem;
   transition: color 0.3s ease;
 }
 
+/* carrito */
+.carrito-container {
+  display: flex;
+  align-items: center;
+}
+
+.carrito-icon {
+  width: 40px;
+  height: 40px;
+}
+
+
+/* barra filtro */
+
+.mb-3 .btn-primary {
+  background-color: #4F2B1D;
+  border-color: #4F2B1D;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-primary:hover {
+  background-color: #3e2215;
+  border-color: #3e2215;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-secondary {
+  background-color: #C5A572;
+  border-color: #C5A572;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-secondary:hover {
+  background-color: #8c6341;
+  border-color: #8c6341;
+  color: #FAF9F6;
+}
 
 /* inicio*/
 
 .home-page {
-  background-color: #fbf7f3;
+  background-color: #FAF9F6;
   min-height: 100vh;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -116,8 +160,8 @@ button:focus-visible {
 }
 
 .home-descrip {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.4rem;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.3rem;
   line-height: 1.5;
   color: #2d1f18; 
   margin: 10px 0 22px;
@@ -166,7 +210,7 @@ button:focus-visible {
 
 .boton-inicio:hover {
   background-color: #3b2418; 
-  color: #fbf7f3;           
+  color: #fbf7f6;           
   box-shadow: none;          
   border-color: inherit;    
 }
@@ -187,6 +231,10 @@ button:focus-visible {
     padding: 12px 28px;
     font-size: 0.98rem;
   }
+  .navbar-logo {
+    height: 40px;
+  }
+
 }
 
 /* Tarjeta de producto*/
