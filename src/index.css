@@ -1,3 +1,4 @@
+/*
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -31,7 +32,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-*/
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -70,6 +71,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/
+
 /* navegacion */
 
 .mi-navbar {
@@ -94,44 +97,6 @@ button:focus-visible {
   color: #FAF9F6;
   margin-right: 1rem;
   transition: color 0.3s ease;
-}
-
-/* carrito */
-.carrito-container {
-  display: flex;
-  align-items: center;
-}
-
-.carrito-icon {
-  width: 70px;
-  height: 70px;
-}
-
-
-/* barra filtro */
-
-.mb-3 .btn-primary {
-  background-color: #4F2B1D;
-  border-color: #4F2B1D;
-  color: #FAF9F6;
-}
-
-.mb-3 .btn-primary:hover {
-  background-color: #3e2215;
-  border-color: #3e2215;
-  color: #FAF9F6;
-}
-
-.mb-3 .btn-secondary {
-  background-color: #C5A572;
-  border-color: #C5A572;
-  color: #FAF9F6;
-}
-
-.mb-3 .btn-secondary:hover {
-  background-color: #8c6341;
-  border-color: #8c6341;
-  color: #FAF9F6;
 }
 
 /* inicio*/
@@ -286,4 +251,105 @@ button:focus-visible {
 .boton-car:hover {
   background-color: #5d3b2b; /* cambia de color*/
   transform: translateY(-2px);  /*Levanta el boton*/
+}
+/* carrito */
+.carrito-container {
+  display: flex;
+  align-items: center;
+}
+
+.carrito-icon {
+  width: 40px;
+  height: 40px;
+}
+
+
+/* barra filtro */
+
+.mb-3 .btn-primary {
+  background-color: #4F2B1D;
+  border-color: #4F2B1D;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-primary:hover {
+  background-color: #3e2215;
+  border-color: #3e2215;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-secondary {
+  background-color: #C5A572;
+  border-color: #C5A572;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-secondary:hover {
+  background-color: #8c6341;
+  border-color: #8c6341;
+  color: #FAF9F6;
+}
+
+/* Footer */
+
+
+.footer {
+  background-color: #3b2418; /* marrón oscuro */
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.footer-icon {
+  font-size: 1.4rem;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.footer-icon:hover {
+  color: #f4d19c; /* tono crema para hover */
+}
+
+
+/* carrito */
+.carrito-container {
+  display: flex;
+  align-items: center;
+}
+
+.carrito-icon {
+  width: 70px;
+  height: 70px;
+}
+
+
+/* barra filtro */
+
+.mb-3 .btn-primary {
+  background-color: #4F2B1D;
+  border-color: #4F2B1D;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-primary:hover {
+  background-color: #3e2215;
+  border-color: #3e2215;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-secondary {
+  background-color: #C5A572;
+  border-color: #C5A572;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-secondary:hover {
+  background-color: #8c6341;
+  border-color: #8c6341;
+  color: #FAF9F6;
 }

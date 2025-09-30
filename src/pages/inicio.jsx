@@ -32,7 +32,14 @@ export default function Inicio() {
             <Row className="justify-content-center">
               <Col xs={12} md={10}>
                 <div className="cont-img-bot">
-                  <img src={imagenInicio} alt="Imagen inicio" className="home-image" />
+                    <picture>
+                      <source srcSet="../../public/imagenes/imagenPrincipal.png" media="(max-width: 768px)" />
+                    <img
+                      src="../../public/imagenes/home-image.png"
+                      alt="Cafetería Luna & Granos"
+                      className="home-image"
+                    />
+                    </picture>
                   <Link to="/carta" className="boton-inicio-link" aria-label="Ir a la carta">
                       <Button className='boton-inicio'> CARTA </Button>
                   </Link>
