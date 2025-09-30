@@ -92,7 +92,7 @@ function Carrito() {
 }
 
 
-//🧩 Cosas que podés agregar después:
+//Cosas que podés agregar después:
 //Botones para aumentar/disminuir cantidad.
 //Persistencia del carrito con localStorage.
 //Mostrar el carrito como un sidebar o dropdown desde el navbar.

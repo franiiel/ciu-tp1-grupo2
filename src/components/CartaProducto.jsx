@@ -19,7 +19,7 @@ function CartaProducto({producto, aniadirAlCarrito}) {
         <Card.Text className="producto-precio">Precio: ${producto.precio}</Card.Text>
 
         <Button variant="primary" size="sm" className="boton-car" onClick={() => aniadirAlCarrito(producto)}>
-          Agregar Producto  
+          Agregar producto  
         </Button>
 
       </Card.Body>
