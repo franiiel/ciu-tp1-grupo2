@@ -11,7 +11,6 @@ function Navegacion() {
       <Navbar className="mi-navbar" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">
-            Luna & Granos Café
             <img src={nombreLogo} alt="Luna & Granos Café" className="navbar-logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
