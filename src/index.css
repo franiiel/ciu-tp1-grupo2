@@ -98,6 +98,7 @@ button:focus-visible {
   margin-right: 1rem;
   transition: color 0.3s ease;
 }
+
 /* inicio*/
 
 .home-page {
@@ -312,4 +313,43 @@ button:focus-visible {
 
 .footer-icon:hover {
   color: #f4d19c; /* tono crema para hover */
+}
+
+
+/* carrito */
+.carrito-container {
+  display: flex;
+  align-items: center;
+}
+
+.carrito-icon {
+  width: 70px;
+  height: 70px;
+}
+
+
+/* barra filtro */
+
+.mb-3 .btn-primary {
+  background-color: #4F2B1D;
+  border-color: #4F2B1D;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-primary:hover {
+  background-color: #3e2215;
+  border-color: #3e2215;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-secondary {
+  background-color: #C5A572;
+  border-color: #C5A572;
+  color: #FAF9F6;
+}
+
+.mb-3 .btn-secondary:hover {
+  background-color: #8c6341;
+  border-color: #8c6341;
+  color: #FAF9F6;
 }
