@@ -15,7 +15,7 @@ import teVerde from "../assets/te-verde.png"
 import cappuccino from "../assets/cappuccino.png"
 
 
-function Carta() {
+function Carta({agregarAlCarrito}) {
   const [categoriaFiltro, setCategoriaFiltro]= useState("todos");
 
   const productos = [
@@ -63,7 +63,7 @@ function Carta() {
       {/* Lista de productos filtrados */}
       <ListaProducto 
         productos={productosFiltrados} 
-        aniadirAlCarrito={(prod) => console.log("Agregar al carrito:", prod)}
+        agregarAlCarrito={agregarAlCarrito}
       />
       {/* <ListaProducto productos={productos} aniadirAlCarrito={console.log(
         "Falta el implementar el carrito")} /> */}

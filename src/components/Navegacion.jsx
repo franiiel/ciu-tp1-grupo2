@@ -2,8 +2,10 @@ import { Link, NavLink } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Badge from 'react-bootstrap/Badge';
 
-function Navegacion() {
+function Navegacion({carrito}) {
+  const totalCantidad= carrito.reduce((total,producto)=> total + producto.cantidad, 0);
   return (
     <>
       <Navbar className="mi-navbar" expand="lg">
@@ -20,8 +22,17 @@ function Navegacion() {
             </Nav>
           </Navbar.Collapse>
           <Nav className="ms-auto carrito-container">
-            <Nav.Link as={Link} to="/carrito">
+            <Nav.Link as={Link} to="/carrito" className="position-relative">
               <img src="imagenes/carrito.png" alt="Carrito" className="carrito-icon" />
+              {totalCantidad > 0 && (
+                <Badge 
+                  bg="danger" 
+                  pill 
+                  className="position-absolute top-0 start-100 translate-middle"
+                >
+                  {totalCantidad}
+              </Badge>
+              )}
             </Nav.Link>
           </Nav>
         </Container>
