@@ -19,7 +19,7 @@ function CartaProducto({producto, onAdd}) {
 
         <Button 
           variant="primary" 
-          className="mt-auto"
+          className="boton-car"
           onClick={() => onAdd(producto)}
         >
           Agregar producto  
