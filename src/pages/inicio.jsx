@@ -2,9 +2,6 @@ import React from 'react'
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-//imagenes
-import logo from "../../public/imagenes/logo.jpeg"
-import imagenInicio from "../../public/imagenes/home-image.png"
 
 export default function Inicio() {
   return (
@@ -13,7 +10,7 @@ export default function Inicio() {
             {/* Logo y nombre */}
             <Row className="justify-content-center">
                 <Col className='text-center' xs="auto">
-                    <img src={logo} alt="Luna & Granos logo" className="home-logo" />
+                    <img src="imagenes/logo.jpeg" alt="Luna & Granos logo" className="home-logo" />
                 </Col>
             </Row>
 
@@ -35,7 +32,7 @@ export default function Inicio() {
                     <picture>
                       <source srcSet="../../public/imagenes/imagenPrincipal.png" media="(max-width: 768px)" />
                     <img
-                      src="../../public/imagenes/home-image.png"
+                      src="imagenes/home-image.png"
                       alt="Cafetería Luna & Granos"
                       className="home-image"
                     />

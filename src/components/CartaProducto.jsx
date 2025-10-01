@@ -1,10 +1,9 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 
-function CartaProducto({producto, aniadirAlCarrito}) {
+function CartaProducto({producto, onAdd}) {
     return (
     <Card className="product-car h-100 shadow-sm">
-
       <Card.Img 
         variant= "top"  // Ubicacion de la imagen dentro de la tarjeta
         src={producto.imagen} 
@@ -18,10 +17,13 @@ function CartaProducto({producto, aniadirAlCarrito}) {
 
         <Card.Text className="producto-precio">Precio: ${producto.precio}</Card.Text>
 
-        <Button variant="primary" size="sm" className="boton-car" onClick={() => aniadirAlCarrito(producto)}>
+        <Button 
+          variant="primary" 
+          className="mt-auto"
+          onClick={() => onAdd(producto)}
+        >
           Agregar producto  
         </Button>
-
       </Card.Body>
     </Card>
   );             
