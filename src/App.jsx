@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Inicio from "./pages/inicio"
 import Carta from "./pages/Carta"
 import Carrito from "./pages/Carrito"
@@ -9,8 +9,15 @@ import Navegacion from "./components/Navegacion";
 
 
 function App() {
-  const [carrito, setCarrito] = useState([]);
-
+  const [carrito, setCarrito] = useState(() => {
+    const carritoGuardado = localStorage.getItem("carrito");
+    return carritoGuardado ? JSON.parse(carritoGuardado) : [];
+  });
+  
+useEffect(() => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }, [carrito]);
+  
   const agregarAlCarrito = (producto) => {
     const existe = carrito.find(p => p.id === producto.id);
     if (existe) {
