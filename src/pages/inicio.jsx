@@ -30,7 +30,7 @@ export default function Inicio() {
               <Col xs={12} md={10}>
                 <div className="cont-img-bot">
                     <picture>
-                      <source srcSet="../../public/imagenes/imagenPrincipal.png" media="(max-width: 768px)" />
+                      <source srcSet="imagenes/imagenPrincipal.png" media="(max-width: 768px)" />
                     <img
                       src="imagenes/home-image.png"
                       alt="Cafetería Luna & Granos"

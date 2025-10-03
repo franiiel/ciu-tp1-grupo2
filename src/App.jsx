@@ -4,6 +4,7 @@ import Inicio from "./pages/inicio"
 import Carta from "./pages/Carta"
 import Carrito from "./pages/Carrito"
 import Contacto from "./pages/Contacto"
+import Nosotros from "./pages/Nosotros"
 import Footer from "./components/Footer"
 import Navegacion from "./components/Navegacion";
 
@@ -62,6 +63,7 @@ useEffect(() => {
           }
         />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/nosotros" element={<Nosotros/>} />
       </Routes>
       <Footer />
     </>
