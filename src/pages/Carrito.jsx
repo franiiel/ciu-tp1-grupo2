@@ -4,7 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function Carrito({ carrito, eliminarProducto }) {
+function Carrito({ carrito, eliminarProducto, actualizarCantidad }) {
   const [mostrarModal, setMostrarModal] = useState(false);
 
   const totalCarrito = carrito.reduce(
@@ -30,12 +30,37 @@ function Carrito({ carrito, eliminarProducto }) {
             >
               <div className="ms-2 me-auto">
                 <div className="fw-bold">{producto.nombre}</div>
-                Cantidad: {producto.cantidad} - Precio unitario: ${producto.precio}
+                Precio unitario: ${producto.precio}
               </div>
               <div className="d-flex flex-column align-items-end">
                 <Badge bg="primary" pill>
                   ${producto.precio * producto.cantidad}
                 </Badge>
+                
+                {/*controles para modificar cantidad*/}
+                <div className="d-flex align-items-center mt-2">
+                  <Button
+                    variant="outline-secondary"
+                    size="sm"
+                    onClick={() =>
+                      producto.cantidad > 1
+                        ? actualizarCantidad(producto.id, producto.cantidad - 1)
+                        : eliminarProducto(producto.id) // si llega a 0, eliminar
+                    }
+                  >
+                    -
+                  </Button>
+                  <span className="mx-2">{producto.cantidad}</span>
+                  <Button
+                    variant="outline-secondary"
+                    size="sm"
+                    onClick={() =>
+                      actualizarCantidad(producto.id, producto.cantidad + 1)
+                    }
+                  >
+                    +
+                  </Button>
+                </div>
                 <Button
                   variant="danger"
                   size="sm"

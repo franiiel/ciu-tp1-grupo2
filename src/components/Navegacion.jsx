@@ -19,6 +19,7 @@ function Navegacion({carrito}) {
             <Nav.Link as={NavLink} to="/">Inicio</Nav.Link>
             <Nav.Link as={NavLink} to="/carta">Carta</Nav.Link>
             <Nav.Link as={NavLink} to="/contacto">Contacto</Nav.Link>
+            <Nav.Link as={NavLink} to="/nosotros">Nosotros</Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Nav className="ms-auto carrito-container">

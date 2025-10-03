@@ -35,6 +35,16 @@ useEffect(() => {
     setCarrito(carrito.filter(p => p.id !== id));
   };
 
+  const actualizarCantidad = (id, nuevaCantidad) => {
+  setCarrito(prevCarrito =>
+    prevCarrito.map(producto =>
+      producto.id === id
+        ? { ...producto, cantidad: nuevaCantidad } 
+        : producto
+    )
+  );
+};
+
   return (
     <>
       <Navegacion carrito={carrito} />
@@ -47,6 +57,7 @@ useEffect(() => {
             <Carrito
               carrito={carrito}
               eliminarProducto={eliminarProducto}
+              actualizarCantidad={actualizarCantidad}
             />
           }
         />
