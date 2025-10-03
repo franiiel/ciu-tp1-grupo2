@@ -246,8 +246,17 @@ button:focus-visible {
   color: #fff;
   font-weight: 600;
   letter-spacing: 0.5px;
+  transition: transform 0.2s ease;
 }
-
+.boton-car.animar{
+  animation: pulse 0.4s ease;
+}
+@keyframes pulse{
+   0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+  
+}
 .boton-car:hover {
   background-color: #5d3b2b; /* cambia de color*/
   transform: translateY(-2px);  /*Levanta el boton*/
