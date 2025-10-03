@@ -4,6 +4,7 @@ import Inicio from "./pages/inicio"
 import Carta from "./pages/Carta"
 import Carrito from "./pages/Carrito"
 import Contacto from "./pages/Contacto"
+import Nosotros from "./pages/Nosotros"
 import Footer from "./components/Footer"
 import Navegacion from "./components/Navegacion";
 
@@ -35,6 +36,16 @@ useEffect(() => {
     setCarrito(carrito.filter(p => p.id !== id));
   };
 
+  const actualizarCantidad = (id, nuevaCantidad) => {
+  setCarrito(prevCarrito =>
+    prevCarrito.map(producto =>
+      producto.id === id
+        ? { ...producto, cantidad: nuevaCantidad } 
+        : producto
+    )
+  );
+};
+
   return (
     <>
       <Navegacion carrito={carrito} />
@@ -47,10 +58,12 @@ useEffect(() => {
             <Carrito
               carrito={carrito}
               eliminarProducto={eliminarProducto}
+              actualizarCantidad={actualizarCantidad}
             />
           }
         />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/nosotros" element={<Nosotros/>} />
       </Routes>
       <Footer />
     </>
