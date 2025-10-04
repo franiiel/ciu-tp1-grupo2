@@ -3,11 +3,10 @@ import { motion } from "framer-motion";
 
 function CartaProducto({ producto, onAdd }) {
   return (
-    // El motion.div envuelve la tarjeta y la anima al entrar
     <motion.div
-      initial={{ opacity: 0, y: 40 }}       
-      animate={{ opacity: 1, y: 0 }}        
-      transition={{ duration: 0.4 }}        
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
     >
       <Card className="product-car h-100 shadow-sm">
         <Card.Img
@@ -23,7 +22,6 @@ function CartaProducto({ producto, onAdd }) {
             Precio: ${producto.precio}
           </Card.Text>
 
-          {/* El botón también usa motion */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.9, rotate: -5 }}
@@ -34,7 +32,7 @@ function CartaProducto({ producto, onAdd }) {
               className="boton-car"
               onClick={() => onAdd(producto)}
             >
-             Agregar al carrito
+              Agregar al carrito
             </Button>
           </motion.div>
         </Card.Body>

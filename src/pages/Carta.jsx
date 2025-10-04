@@ -35,8 +35,6 @@ function Carta({agregarAlCarrito}) {
 
   return (
     <Container className="mt-4">
-      <h2 className="mb-4">Carta del Café</h2>
-
       <ButtonGroup className="mb-3">
         <Button
           variant={categoriaFiltro === "todos" ? "primary" : "secondary"}
