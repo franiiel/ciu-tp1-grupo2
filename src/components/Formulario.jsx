@@ -1,6 +1,12 @@
 import { useState } from "react";
-import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
-
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  Modal,
+} from "react-bootstrap";
 
 export default function Formulario() {
   const [formData, setFormData] = useState({
@@ -10,8 +16,9 @@ export default function Formulario() {
     hora: "",
     mensaje: "",
   });
+
   const [error, setError] = useState({});
-  const [enviado, setEnviado] = useState();
+  const [mostrarModal, setMostrarModal] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,8 +26,8 @@ export default function Formulario() {
       ...formData,
       [name]: value,
     });
-    setEnviado(false);
   };
+
   const validaciones = () => {
     let errores = {};
     if (!formData.nombre.trim()) {
@@ -29,7 +36,7 @@ export default function Formulario() {
     if (!formData.email.trim()) {
       errores.email = "El email es obligatorio";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errores.email = "El email no es valido";
+      errores.email = "El email no es válido";
     }
     if (!formData.fecha) {
       errores.fecha = "La fecha es obligatoria";
@@ -47,14 +54,24 @@ export default function Formulario() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const erroresValidacion = validaciones();
-    if (Object.keys(erroresValidacion).length > 0 > 0) {
+    if (Object.keys(erroresValidacion).length > 0) {
       setError(erroresValidacion);
-      setEnviado(false);
     } else {
       setError({});
-      setEnviado(true);
+      setMostrarModal(true);
       console.log("Reserva:", formData);
     }
+  };
+
+  const cerrarModal = () => {
+    setMostrarModal(false);
+    setFormData({
+      nombre: "",
+      email: "",
+      fecha: "",
+      hora: "",
+      mensaje: "",
+    });
   };
 
   return (
@@ -66,11 +83,6 @@ export default function Formulario() {
         <Col md={6} lg={4} className="mx-auto">
           <h2 className="text-center mb-4">Formulario de Reserva</h2>
 
-          {enviado && (
-            <Alert variant="success">
-              ✅ Tu reserva fue enviada correctamente.
-            </Alert>
-          )}
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
               <Form.Label>Nombre</Form.Label>
@@ -83,7 +95,7 @@ export default function Formulario() {
                 isInvalid={!!error.nombre}
               />
               <Form.Control.Feedback type="invalid">
-                {error.nombnre}
+                {error.nombre}
               </Form.Control.Feedback>
             </Form.Group>
 
@@ -95,12 +107,13 @@ export default function Formulario() {
                 placeholder="Ingresá tu correo"
                 value={formData.email}
                 onChange={handleChange}
-                isInvalid={error.nombre}
+                isInvalid={!!error.email}
               />
               <Form.Control.Feedback type="invalid">
                 {error.email}
               </Form.Control.Feedback>
             </Form.Group>
+
             <Form.Group className="mb-3">
               <Form.Label>Fecha de reserva</Form.Label>
               <Form.Control
@@ -108,7 +121,7 @@ export default function Formulario() {
                 name="fecha"
                 value={formData.fecha}
                 onChange={handleChange}
-                isInvalid={error.fecha}
+                isInvalid={!!error.fecha}
               />
               <Form.Control.Feedback type="invalid">
                 {error.fecha}
@@ -122,12 +135,13 @@ export default function Formulario() {
                 name="hora"
                 value={formData.hora}
                 onChange={handleChange}
-                isInvalid={error.hora}
+                isInvalid={!!error.hora}
               />
               <Form.Control.Feedback type="invalid">
                 {error.hora}
               </Form.Control.Feedback>
             </Form.Group>
+
             <Form.Group className="mb-3">
               <Form.Label>Mensaje</Form.Label>
               <Form.Control
@@ -136,7 +150,7 @@ export default function Formulario() {
                 name="mensaje"
                 value={formData.mensaje}
                 onChange={handleChange}
-                isInvalid={error.mensaje}
+                isInvalid={!!error.mensaje}
               />
               <Form.Control.Feedback type="invalid">
                 {error.mensaje}
@@ -149,6 +163,21 @@ export default function Formulario() {
           </Form>
         </Col>
       </Row>
+
+      {/* mensaje de confirmacion */}
+      <Modal show={mostrarModal} onHide={cerrarModal} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Reserva Confirmada</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          ✅ ¡Gracias por tu reserva! Te esperamos 😊
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={cerrarModal}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 }
