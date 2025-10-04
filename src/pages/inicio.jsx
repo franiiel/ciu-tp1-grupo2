@@ -7,14 +7,14 @@ export default function Inicio() {
   return (
     <div className="home-page">
       <Container className="home-cont">
-            {/* Logo y nombre */}
+
             <Row className="justify-content-center">
                 <Col className='text-center' xs="auto">
                     <img src="imagenes/logo.jpeg" alt="Luna & Granos logo" className="home-logo" />
                 </Col>
             </Row>
 
-            {/* Descripcion */}
+
             <Row className="justify-content-center">
               <Col xs={12} md={10} className="text-center">
                 <p className="home-descrip">
@@ -25,7 +25,6 @@ export default function Inicio() {
               </Col>
             </Row>
 
-            {/* Imagen y boton */}
             <Row className="justify-content-center">
               <Col xs={12} md={10}>
                 <div className="cont-img-bot">

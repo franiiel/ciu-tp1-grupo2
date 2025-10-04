@@ -14,7 +14,7 @@ export default function Nosotros() {
 
   return (
     <Container className="my-5">
-      {/* Imagen */}
+
       <Row className="justify-content-center mb-4">
         <Col xs={12} md={8} lg={6} className="text-center">
           <Image
@@ -26,7 +26,6 @@ export default function Nosotros() {
         </Col>
       </Row>
 
-      {/* Biografía */}
       <Row className="justify-content-center mb-5">
         <Col xs={12} md={10} lg={8}>
           <h2 className="home-descrip">Sobre Nosotros</h2>
@@ -51,7 +50,7 @@ export default function Nosotros() {
         </Col>
     </Row>         
 
-      {/* Formulario */}
+
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={6}>
           {!enviado ? (

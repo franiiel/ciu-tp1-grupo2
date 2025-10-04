@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ListaProducto from '../components/ListaProducto'
 import {Container, Button, ButtonGroup} from "react-bootstrap";
 
-/*imagenes de la carta*/
+
 
 import medialuna from "../assets/medialuna.png"
 import latte from "../assets/latte.png"
@@ -37,7 +37,6 @@ function Carta({agregarAlCarrito}) {
     <Container className="mt-4">
       <h2 className="mb-4">Carta del Café</h2>
 
-      {/*botones filtro*/}
       <ButtonGroup className="mb-3">
         <Button
           variant={categoriaFiltro === "todos" ? "primary" : "secondary"}
@@ -64,8 +63,7 @@ function Carta({agregarAlCarrito}) {
         productos={productosFiltrados} 
         agregarAlCarrito={agregarAlCarrito}
       />
-      {/* <ListaProducto productos={productos} aniadirAlCarrito={console.log(
-        "Falta el implementar el carrito")} /> */}
+      
     </Container>
   );
 }
