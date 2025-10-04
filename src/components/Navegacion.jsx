@@ -21,8 +21,8 @@ function Navegacion({carrito}) {
             <Nav.Link as={NavLink} to="/contacto">Contacto</Nav.Link>
             <Nav.Link as={NavLink} to="/nosotros">Nosotros</Nav.Link>
             </Nav>
-          </Navbar.Collapse>
-          <Nav className="ms-auto carrito-container">
+
+            <Nav className="ms-auto carrito-container">
             <Nav.Link as={Link} to="/carrito" className="position-relative">
               <img src="imagenes/carrito.png" alt="Carrito" className="carrito-icon" />
               {totalCantidad > 0 && (
@@ -36,6 +36,7 @@ function Navegacion({carrito}) {
               )}
             </Nav.Link>
           </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </>
