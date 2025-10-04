@@ -10,7 +10,7 @@ function Footer() {
                 <Row className="align-items-center text-center text-md-start">
                 {/* Contacto */}
                 <Col md={6} className="mb-3 mb-md-0">
-                    
+                    <p>© Luna & Granos Café. Todos los derechos reservados.</p>                    
                 </Col>
 
                 {/* Redes sociales */}

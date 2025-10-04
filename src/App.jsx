@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import { useState, useEffect } from "react";
 import Inicio from "./pages/inicio"
 import Carta from "./pages/Carta"
@@ -64,6 +64,7 @@ useEffect(() => {
         />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/nosotros" element={<Nosotros/>} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Footer />
     </>
