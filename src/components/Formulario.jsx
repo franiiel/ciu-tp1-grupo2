@@ -62,6 +62,16 @@ export default function Formulario() {
       console.log("Reserva:", formData);
     }
   };
+  const [animar, setAnimar] = useState(false);
+
+  const handleClick = () => {
+    // activar animación
+    setAnimar(true);
+
+    // después de 500ms sacar la clase
+    setTimeout(() => setAnimar(false), 500);
+  
+  };
 
   const cerrarModal = () => {
     setMostrarModal(false);
@@ -157,7 +167,7 @@ export default function Formulario() {
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Button variant="primary" type="submit" className="boton-car">
+            <Button variant="primary" type="submit" className={`boton-car ${animar ? "animar" : ""}`} onClick={handleClick}>
               Enviar
             </Button>
           </Form>
