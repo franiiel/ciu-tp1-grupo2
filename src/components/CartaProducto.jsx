@@ -1,40 +1,45 @@
 import { Card, Button } from "react-bootstrap";
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 function CartaProducto({ producto, onAdd }) {
-  const [animar, setAnimar] = useState(false);
-
-  const handleClick = () => {
-    // activar animación
-    setAnimar(true);
-
-    // después de 500ms sacar la clase
-    setTimeout(() => setAnimar(false), 500);
-    
-    onAdd(producto);
-  };
-
   return (
-    <Card className="product-car h-100 shadow-sm">
-      <Card.Img
-        variant="top" // Ubicacion de la imagen dentro de la tarjeta
-        src={producto.imagen}
-        alt={producto.nombre} // Describe la imagen
-        className="product-image"
-      />
+    // El motion.div envuelve la tarjeta y la anima al entrar
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}       
+      animate={{ opacity: 1, y: 0 }}        
+      transition={{ duration: 0.4 }}        
+    >
+      <Card className="product-car h-100 shadow-sm">
+        <Card.Img
+          variant="top"
+          src={producto.imagen}
+          alt={producto.nombre}
+          className="product-image"
+        />
 
-      <Card.Body className="d-flex flex-column">
-        <Card.Title className="producto-titulo">{producto.nombre}</Card.Title>
+        <Card.Body className="d-flex flex-column">
+          <Card.Title className="producto-titulo">{producto.nombre}</Card.Title>
+          <Card.Text className="producto-precio">
+            Precio: ${producto.precio}
+          </Card.Text>
 
-        <Card.Text className="producto-precio">
-          Precio: ${producto.precio}
-        </Card.Text>
-
-        <Button variant="primary" className={`boton-car ${animar ? "animar" : ""}`} onClick={handleClick}>
-          Agregar Producto
-        </Button>
-      </Card.Body>
-    </Card>
+          {/* El botón también usa motion */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9, rotate: -5 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <Button
+              variant="primary"
+              className="boton-car"
+              onClick={() => onAdd(producto)}
+            >
+             Agregar al carrito
+            </Button>
+          </motion.div>
+        </Card.Body>
+      </Card>
+    </motion.div>
   );
 }
 

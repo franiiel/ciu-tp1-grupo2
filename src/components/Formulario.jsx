@@ -174,7 +174,6 @@ export default function Formulario() {
         </Col>
       </Row>
 
-      {/* mensaje de confirmacion */}
       <Modal show={mostrarModal} onHide={cerrarModal} centered>
         <Modal.Header closeButton>
           <Modal.Title>Reserva Confirmada</Modal.Title>
