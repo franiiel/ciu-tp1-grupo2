@@ -106,28 +106,6 @@
   border-color: inherit;    
 }
 
-
-@media (max-width: 576px) {
-  .home-cont {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  .home-logo {
-    width: 110px;
-  }
-  .home-descrip {
-    font-size: 1.1rem;
-  }
-  .boton-inicio {
-    padding: 12px 28px;
-    font-size: 0.98rem;
-  }
-  .navbar-logo {
-    height: 40px;
-  }
-
-}
-
 /* Tarjeta de producto*/
 
 .product-car {
@@ -144,8 +122,9 @@
 
 
 .product-image {
+  width: 100%;
   height: 300px;
-  object-fit: cover; 
+  object-fit: cover;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
@@ -229,7 +208,7 @@
 
 
 .footer {
-  background-color: #3b2418; /* marrón oscuro */
+  background-color: #3b2418; 
   color: #fff;
   font-size: 0.9rem;
 }
@@ -247,7 +226,7 @@
 }
 
 .footer-icon:hover {
-  color: #f4d19c; /* tono crema para hover */
+  color: #f4d19c;
 }
 
 
@@ -287,4 +266,27 @@
   background-color: #8c6341;
   border-color: #8c6341;
   color: #FAF9F6;
+}
+
+@media (max-width: 576px) {
+  .home-cont {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .home-logo {
+    width: 110px;
+  }
+  .home-descrip {
+    font-size: 1.1rem;
+  }
+  .boton-inicio {
+    padding: 12px 28px;
+    font-size: 0.98rem;
+  }
+  .navbar-logo {
+    height: 40px;
+  }
+  .product-image {
+    height: 550px;
+  }
 }
